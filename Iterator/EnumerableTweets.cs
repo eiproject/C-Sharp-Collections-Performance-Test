@@ -1,4 +1,5 @@
 ﻿using CollectionsPerformanceTest.Models;
+using CsvHelper;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,10 +10,14 @@ using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Business {
   class EnumerableTweets : IEnumerable {
-    StreamReader _coronaTweet;
+    List<Tweet> _tweets =  new List<Tweet>();
 
-    internal EnumerableTweets(StreamReader coronaTweets) {
-    _coronaTweet = coronaTweets;
+    internal EnumerableTweets(CsvReader csvReader) {
+      while (csvReader.Read()) {
+        Tweet tweet = csvReader.GetRecord<Tweet>();
+        _tweets.Add(tweet);
+      }
+      Console.WriteLine($"There are {_tweets.Count} tweets");
     }
 
     IEnumerator IEnumerable.GetEnumerator() {
@@ -20,7 +25,7 @@ namespace CollectionsPerformanceTest.Business {
     }
 
     internal EnumeratorTweets GetEnumeratorTweets() {
-      return new EnumeratorTweets();
+      return new EnumeratorTweets(_tweets);
     }
   }
 }

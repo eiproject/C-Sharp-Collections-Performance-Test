@@ -8,16 +8,19 @@ using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Business {
   class EnumeratorTweets : IEnumerator {
-    internal EnumeratorTweets() { }
+    private List<Tweet> _tweets;
+    private int _position = -1;
+    internal EnumeratorTweets(List<Tweet> tweets) { _tweets = tweets; }
 
-    object IEnumerator.Current => throw new NotImplementedException();
+    object IEnumerator.Current => _tweets[_position];
 
     bool IEnumerator.MoveNext() {
-      throw new NotImplementedException();
+      _position++;
+      return (_position < _tweets.Count);
     }
 
     void IEnumerator.Reset() {
-      throw new NotImplementedException();
+      _position = -1;
     }
   }
 }
