@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Models {
-  class CoronaTweet {
+  class CoronaTweets {
     private StreamReader _csvData;
-    internal CoronaTweet() {
+    internal CoronaTweets() {
     }
     internal void Read(StreamReader streamer) {
       _csvData = streamer;
