@@ -60,11 +60,18 @@
   <ItemGroup>
     <Compile Include="Business\TweetSentimentFilter.cs" />
     <Compile Include="Iterator\TweetsArrayList.cs" />
+    <Compile Include="Iterator\TweetsSortedListWithKeyValue.cs" />
+    <Compile Include="Iterator\TweetsSortedList.cs" />
+    <Compile Include="Iterator\TweetsSortedDictionary.cs" />
+    <Compile Include="Iterator\TweetsOrderedDictionary.cs" />
+    <Compile Include="Iterator\TweetsListDictionary.cs" />
+    <Compile Include="Iterator\TweetsHashtable.cs" />
     <Compile Include="Iterator\TweetsIDictionary.cs" />
     <Compile Include="Iterator\TweetsIReadOnlyList.cs" />
     <Compile Include="Iterator\TweetsIList.cs" />
     <Compile Include="Iterator\TweetsICollection.cs" />
     <Compile Include="Iterator\TweetsIEnum.cs" />
+    <Compile Include="Iterator\TweetsHashSet .cs" />
     <Compile Include="Iterator\TweetsStack.cs" />
     <Compile Include="Iterator\TweetsQueue.cs" />
     <Compile Include="Iterator\TweetsLinkedList.cs" />

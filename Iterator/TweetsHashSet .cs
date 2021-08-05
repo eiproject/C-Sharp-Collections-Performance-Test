@@ -3,21 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace CollectionsPerformanceTest.Business {
-  class TweetsIDictionary : TweetsIterator {
-    IDictionary<string, Tweet> _tweets = new Dictionary<string, Tweet>();
-    internal TweetsIDictionary(ArrayList tweets)
+  class TweetsHashSet : TweetsIterator {
+    HashSet<Tweet> _tweets;
+    internal TweetsHashSet(ArrayList tweets)
       : base() {
+      _tweets = new HashSet<Tweet>();
       foreach (Tweet tweet in tweets) {
-        _tweets.Add(tweet.UserName, tweet);
+        _tweets.Add(tweet);
       }
     }
 
-    internal IDictionary<string, Tweet> GetTweets() {
+    internal HashSet<Tweet> GetTweets() {
       return _tweets;
     }
 
     internal override void DoLoop() {
-      foreach(var tweet in _tweets) {
+      for (int i = 0; i < _tweets.Count; i++) {
         // Do Nothing
       }
     }

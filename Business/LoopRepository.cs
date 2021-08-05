@@ -29,7 +29,6 @@ namespace CollectionsPerformanceTest.Business {
       _iteratorObjects.Add(new TweetsIList(tweets));
       _iteratorObjects.Add(new TweetsIReadOnlyList(tweets));
       _iteratorObjects.Add(new TweetsICollection(tweets));
-      _iteratorObjects.Add(new TweetsIDictionary(tweets));
 
       _iteratorObjects.Add(new TweetsArray(tweets));
 
@@ -39,6 +38,16 @@ namespace CollectionsPerformanceTest.Business {
       
       _iteratorObjects.Add(new TweetsQueue(tweets));
       _iteratorObjects.Add(new TweetsStack(tweets));
+
+      _iteratorObjects.Add(new TweetsHashSet(tweets));
+
+      _iteratorObjects.Add(new TweetsIDictionary(tweets));
+      _iteratorObjects.Add(new TweetsHashtable(tweets));
+      _iteratorObjects.Add(new TweetsListDictionary(tweets));
+      _iteratorObjects.Add(new TweetsOrderedDictionary(tweets));
+      _iteratorObjects.Add(new TweetsSortedDictionary(tweets));
+      _iteratorObjects.Add(new TweetsSortedList(tweets));
+      _iteratorObjects.Add(new TweetsSortedListWithKeyValue(tweets));
     }
 
     internal void StartLoop() {

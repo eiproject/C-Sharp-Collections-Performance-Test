@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace CollectionsPerformanceTest.Business {
-  class TweetsIDictionary : TweetsIterator {
-    IDictionary<string, Tweet> _tweets = new Dictionary<string, Tweet>();
-    internal TweetsIDictionary(ArrayList tweets)
+  class TweetsHashtable : TweetsIterator {
+    Hashtable _tweets = new Hashtable();
+    internal TweetsHashtable(ArrayList tweets)
       : base() {
       foreach (Tweet tweet in tweets) {
         _tweets.Add(tweet.UserName, tweet);
       }
     }
 
-    internal IDictionary<string, Tweet> GetTweets() {
+    internal Hashtable GetTweets() {
       return _tweets;
     }
 

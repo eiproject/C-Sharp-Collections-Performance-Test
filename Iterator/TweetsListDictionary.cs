@@ -1,18 +1,19 @@
 ﻿using CollectionsPerformanceTest.Models;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace CollectionsPerformanceTest.Business {
-  class TweetsIDictionary : TweetsIterator {
-    IDictionary<string, Tweet> _tweets = new Dictionary<string, Tweet>();
-    internal TweetsIDictionary(ArrayList tweets)
+  class TweetsListDictionary : TweetsIterator {
+    ListDictionary _tweets = new ListDictionary();
+    internal TweetsListDictionary(ArrayList tweets)
       : base() {
       foreach (Tweet tweet in tweets) {
         _tweets.Add(tweet.UserName, tweet);
       }
     }
 
-    internal IDictionary<string, Tweet> GetTweets() {
+    internal ListDictionary GetTweets() {
       return _tweets;
     }
 
