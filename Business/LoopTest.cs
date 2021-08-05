@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CollectionsPerformanceTest {
+namespace CollectionsPerformanceTest.Business {
   class LoopTest {
     private List<TimeSpan> _times = new List<TimeSpan>();
     internal LoopTest() {
@@ -14,12 +14,15 @@ namespace CollectionsPerformanceTest {
     internal void StartLoop(string filePath, int numberOfIteration) {
       for (int i = 0; i < numberOfIteration; i++) {
         var timer = new Stopwatch();
-        timer.Start();
+        //timer.Start();
 
-        TweetFilter app = new TweetFilter(filePath);
-        app.RunSentimentFilterUsingIEnum("positive");
-        
-        timer.Stop();
+        TweetFilter app = new TweetFilter(filePath, "positive", timer);
+        //app.RunSentimentFilterUsingIEnum();
+        //app.RunSentimentFilterUsingArray("positive");
+        //app.RunSentimentFilterUsingArrayList("positive");
+        app.RunSentimentFilterUsingList("positive");
+
+        //timer.Stop();
         _times.Add(timer.Elapsed);
         Console.WriteLine($"{i} \t Processing Time: { timer.Elapsed }");
       }
