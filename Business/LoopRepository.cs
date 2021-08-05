@@ -31,6 +31,7 @@ namespace CollectionsPerformanceTest.Business {
       _iteratorObjects.Add(new TweetsIEnum(tweets));
       _iteratorObjects.Add(new TweetsIList(tweets));
       _iteratorObjects.Add(new TweetsICollection(tweets));
+      _iteratorObjects.Add(new TweetsIDictionary(tweets));
     }
 
     internal void StartLoop() {
