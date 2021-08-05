@@ -15,7 +15,7 @@ namespace CollectionsPerformanceTest.Business {
     }
 
     internal override void DoLoop() {
-      foreach(object tweet in _tweets) {
+      for (int i = 0; i < _tweets.Count; i++) {
         // Do Nothing
       }
     }

@@ -61,6 +61,7 @@
     <Compile Include="Business\TweetSentimentFilter.cs" />
     <Compile Include="Iterator\TweetsArrayList.cs" />
     <Compile Include="Iterator\TweetsIDictionary.cs" />
+    <Compile Include="Iterator\TweetsIReadOnlyList.cs" />
     <Compile Include="Iterator\TweetsIList.cs" />
     <Compile Include="Iterator\TweetsICollection.cs" />
     <Compile Include="Iterator\TweetsIEnum.cs" />

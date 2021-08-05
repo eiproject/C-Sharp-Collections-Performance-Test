@@ -13,7 +13,7 @@ namespace CollectionsPerformanceTest.Business {
       return _tweets;
     }
     internal override void DoLoop() {
-      foreach (Tweet tweet in _tweets) {
+      for (int i = 0; i < _tweets.Count; i++) {
         // Do Nothing
       }
     }
