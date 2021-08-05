@@ -2,19 +2,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Business {
   class EnumerableTweets : IEnumerable {
-    CoronaTweet _coronaTweet;
-    internal EnumerableTweets(CoronaTweet coronaTweetObject) {
-    _coronaTweet = coronaTweetObject;
+    StreamReader _coronaTweet;
+
+    internal EnumerableTweets(StreamReader coronaTweets) {
+    _coronaTweet = coronaTweets;
     }
 
     IEnumerator IEnumerable.GetEnumerator() {
-      throw new NotImplementedException();
+      return (IEnumerator)GetEnumeratorTweets();
+    }
+
+    internal EnumeratorTweets GetEnumeratorTweets() {
+      return new EnumeratorTweets();
     }
   }
 }

@@ -14,8 +14,10 @@ namespace CollectionsPerformanceTest {
       _filePath = filePath;
     }
     internal void Run() {
-      CoronaTweet tweets = new CoronaTweet();
-      tweets.Read(new StreamReader(_filePath));
+      CoronaTweets csvTweets = new CoronaTweets();
+      csvTweets.Read(new StreamReader(_filePath));
+
+      EnumerableTweets coronaTweets = new EnumerableTweets(csvTweets.GetStreamReader());
     }
   }
 }

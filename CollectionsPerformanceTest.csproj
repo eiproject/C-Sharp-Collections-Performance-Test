@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\EnumerableTweets.cs" />
-    <Compile Include="Models\CoronaTweet.cs" />
+    <Compile Include="Business\TweetFactory.cs" />
+    <Compile Include="Models\CoronaTweets.cs" />
     <Compile Include="Business\EnumeratorTweets.cs" />
     <Compile Include="CollectionPerformanceTest.cs" />
+    <Compile Include="Models\Tweet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
