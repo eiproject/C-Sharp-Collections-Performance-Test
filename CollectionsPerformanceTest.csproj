@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Business\CoronaTweet.cs" />
     <Compile Include="Business\Iterator.cs" />
+    <Compile Include="CollectionPerformanceTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
