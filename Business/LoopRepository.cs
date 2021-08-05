@@ -25,15 +25,20 @@ namespace CollectionsPerformanceTest.Business {
       _stopwatch = new Stopwatch();
       ArrayList tweets = ReadFromCSV(filePath);
 
-      _iteratorObjects.Add(new TweetsArrayList(tweets));
-      _iteratorObjects.Add(new TweetsList(tweets));
       _iteratorObjects.Add(new TweetsIEnum(tweets));
       _iteratorObjects.Add(new TweetsIList(tweets));
       _iteratorObjects.Add(new TweetsIReadOnlyList(tweets));
       _iteratorObjects.Add(new TweetsICollection(tweets));
       _iteratorObjects.Add(new TweetsIDictionary(tweets));
+
       _iteratorObjects.Add(new TweetsArray(tweets));
+
+      _iteratorObjects.Add(new TweetsList(tweets));
+      _iteratorObjects.Add(new TweetsArrayList(tweets));
+      _iteratorObjects.Add(new TweetsLinkedList(tweets));
       
+      _iteratorObjects.Add(new TweetsQueue(tweets));
+      _iteratorObjects.Add(new TweetsStack(tweets));
     }
 
     internal void StartLoop() {

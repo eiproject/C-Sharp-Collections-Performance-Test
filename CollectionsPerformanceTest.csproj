@@ -65,6 +65,9 @@
     <Compile Include="Iterator\TweetsIList.cs" />
     <Compile Include="Iterator\TweetsICollection.cs" />
     <Compile Include="Iterator\TweetsIEnum.cs" />
+    <Compile Include="Iterator\TweetsStack.cs" />
+    <Compile Include="Iterator\TweetsQueue.cs" />
+    <Compile Include="Iterator\TweetsLinkedList.cs" />
     <Compile Include="Iterator\TweetsList.cs" />
     <Compile Include="Iterator\TweetsArray.cs" />
     <Compile Include="Iterator\IEnumerableEnumerator\TweetsEnumerable.cs" />
