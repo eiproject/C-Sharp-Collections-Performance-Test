@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Business\TweetSentimentFilter.cs" />
     <Compile Include="Iterator\TweetsArrayList.cs" />
+    <Compile Include="Iterator\TweetsIList.cs" />
     <Compile Include="Iterator\TweetsICollection.cs" />
     <Compile Include="Iterator\TweetsIEnum.cs" />
     <Compile Include="Iterator\TweetsList.cs" />

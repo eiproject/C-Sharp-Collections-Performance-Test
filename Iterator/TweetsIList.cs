@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace CollectionsPerformanceTest.Business {
-  class TweetsICollection : TweetsIterator {
-    ICollection<object> _tweets; 
-    internal TweetsICollection(ArrayList tweets)
+  class TweetsIList : TweetsIterator {
+    IList<object> _tweets; 
+    internal TweetsIList(ArrayList tweets)
       : base() {
       _tweets = tweets.ToArray();
     }

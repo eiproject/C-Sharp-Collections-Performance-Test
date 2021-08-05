@@ -29,6 +29,7 @@ namespace CollectionsPerformanceTest.Business {
       _iteratorObjects.Add(new TweetsList(tweets));
       _iteratorObjects.Add(new TweetsArrayList(tweets));
       _iteratorObjects.Add(new TweetsIEnum(tweets));
+      _iteratorObjects.Add(new TweetsIList(tweets));
       _iteratorObjects.Add(new TweetsICollection(tweets));
     }
 
