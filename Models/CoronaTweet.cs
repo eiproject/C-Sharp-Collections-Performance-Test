@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CollectionsPerformanceTest.Business {
+namespace CollectionsPerformanceTest.Models {
   class CoronaTweet {
     private StreamReader _csvData;
     internal CoronaTweet() {

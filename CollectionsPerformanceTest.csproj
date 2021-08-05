@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\CoronaTweet.cs" />
-    <Compile Include="Business\Iterator.cs" />
+    <Compile Include="Business\EnumerableTweets.cs" />
+    <Compile Include="Models\CoronaTweet.cs" />
+    <Compile Include="Business\EnumeratorTweets.cs" />
     <Compile Include="CollectionPerformanceTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,8 +56,6 @@
     <None Include="archive\Corona_NLP_test.csv" />
     <None Include="archive\Corona_NLP_train.csv" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
