@@ -10,9 +10,8 @@ namespace CollectionsPerformanceTest {
   class Program {
     static string _filePath = @"C:\Lab Formulatrix\CollectionsPerformanceTest\CollectionsPerformanceTest\archive\Corona_NLP_train.csv";
     static void Main(string[] args) {
-      LoopTest loop = new LoopTest();
-      loop.StartLoop(_filePath, 100);
-      loop.PrintAverage();
+      LoopRepository loop = new LoopRepository(_filePath, 1000);
+      loop.StartLoop();
       Console.ReadKey();
     }
   }

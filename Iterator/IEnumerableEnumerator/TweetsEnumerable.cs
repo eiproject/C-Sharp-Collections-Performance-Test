@@ -9,23 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Business {
-  class EnumerableTweets : IEnumerable {
+  class TweetsEnumerable : IEnumerable {
     List<Tweet> _tweets =  new List<Tweet>();
 
-    internal EnumerableTweets(CsvReader csvReader) {
-      while (csvReader.Read()) {
-        Tweet tweet = csvReader.GetRecord<Tweet>();
+    internal TweetsEnumerable(ArrayList tweets) {
+      foreach (Tweet tweet in tweets) {
         _tweets.Add(tweet);
       }
-      // Console.WriteLine($"There are {_tweets.Count} tweets");
     }
 
     IEnumerator IEnumerable.GetEnumerator() {
       return (IEnumerator)GetEnumeratorTweets();
     }
 
-    internal EnumeratorTweets GetEnumeratorTweets() {
-      return new EnumeratorTweets(_tweets);
+    internal TweetsEnumerator GetEnumeratorTweets() {
+      return new TweetsEnumerator(_tweets);
     }
   }
 }

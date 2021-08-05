@@ -8,9 +8,7 @@ using System.Threading.Tasks;
 namespace CollectionsPerformanceTest.Business {
   class TweetSentimentFilter {
     private bool _boolResult;
-    internal TweetSentimentFilter() {
-
-    }
+    internal TweetSentimentFilter() { }
     internal bool FilterBySentiment(Tweet tweet, string sentiment){
       if (tweet.Sentiment.ToLower() == sentiment.ToLower()) {
         _boolResult = true;

@@ -7,10 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Business {
-  class EnumeratorTweets : IEnumerator {
+  class TweetsEnumerator : IEnumerator {
     private List<Tweet> _tweets;
     private int _position = -1;
-    internal EnumeratorTweets(List<Tweet> tweets) { _tweets = tweets; }
+    internal TweetsEnumerator(List<Tweet> tweets) { _tweets = tweets; }
 
     object IEnumerator.Current => _tweets[_position];
 

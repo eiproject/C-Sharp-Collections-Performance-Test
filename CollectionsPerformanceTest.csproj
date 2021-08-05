@@ -59,13 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\TweetSentimentFilter.cs" />
-    <Compile Include="Iterator\ArrayListOfTweets.cs" />
-    <Compile Include="Iterator\ListOfTweets.cs" />
-    <Compile Include="Iterator\ArrayOfTweets.cs" />
-    <Compile Include="Iterator\EnumerableTweets.cs" />
-    <Compile Include="Iterator\EnumeratorTweets.cs" />
-    <Compile Include="Business\LoopTest.cs" />
-    <Compile Include="Business\TweetFilter.cs" />
+    <Compile Include="Iterator\TweetsArrayList.cs" />
+    <Compile Include="Iterator\TweetsICollection.cs" />
+    <Compile Include="Iterator\TweetsIEnum.cs" />
+    <Compile Include="Iterator\TweetsList.cs" />
+    <Compile Include="Iterator\TweetsArray.cs" />
+    <Compile Include="Iterator\IEnumerableEnumerator\TweetsEnumerable.cs" />
+    <Compile Include="Iterator\IEnumerableEnumerator\TweetsEnumerator.cs" />
+    <Compile Include="Business\LoopRepository.cs" />
+    <Compile Include="Business\TweetsIterator.cs" />
     <Compile Include="Models\Tweet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
