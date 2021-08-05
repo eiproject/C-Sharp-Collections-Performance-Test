@@ -38,12 +38,12 @@ namespace CollectionsPerformanceTest.Business {
       foreach (dynamic iterator in _iteratorObjects) {
         PrintCurrentProcess(iterator);
 
-        CreateNewTimeSpanGroup();
+        CreateNewElapsedTimeGroup();
         for (int i = 0; i < _numberOfIteration; i++) {
           _stopwatch.Start();
-          iterator.DoLoop();
+          iterator.DoLoop(); // Do iterator in the subclass
           _stopwatch.Stop();
-          _times.Add(_stopwatch.Elapsed);
+          AddTimeElapsedToGroup(_stopwatch.Elapsed);
           _stopwatch.Reset();
         }
         PrintAverage();
@@ -72,8 +72,11 @@ namespace CollectionsPerformanceTest.Business {
       }
       return tweets;
     }
-    private void CreateNewTimeSpanGroup() {
+    private void CreateNewElapsedTimeGroup() {
       _times = new List<TimeSpan>();
+    }
+    private void AddTimeElapsedToGroup(TimeSpan time) {
+      _times.Add(time);
     }
   }
 }
