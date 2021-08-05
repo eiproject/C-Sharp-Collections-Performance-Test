@@ -37,7 +37,7 @@ namespace CollectionsPerformanceTest {
         }
       }
 
-      Console.WriteLine($"There are {_filteredTweets.Count} {sentiment} tweets");
+      // Console.WriteLine($"There are {_filteredTweets.Count} {sentiment} tweets");
     }
   }
 }

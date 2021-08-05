@@ -17,7 +17,7 @@ namespace CollectionsPerformanceTest.Business {
         Tweet tweet = csvReader.GetRecord<Tweet>();
         _tweets.Add(tweet);
       }
-      Console.WriteLine($"There are {_tweets.Count} tweets");
+      // Console.WriteLine($"There are {_tweets.Count} tweets");
     }
 
     IEnumerator IEnumerable.GetEnumerator() {

@@ -61,6 +61,7 @@
     <Compile Include="Business\TweetSentimentFilter.cs" />
     <Compile Include="Iterator\EnumerableTweets.cs" />
     <Compile Include="Iterator\EnumeratorTweets.cs" />
+    <Compile Include="LoopTest.cs" />
     <Compile Include="TweetFilter.cs" />
     <Compile Include="Models\Tweet.cs" />
     <Compile Include="Program.cs" />

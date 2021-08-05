@@ -9,13 +9,9 @@ namespace CollectionsPerformanceTest {
   class Program {
     static string _filePath = @"C:\Lab Formulatrix\CollectionsPerformanceTest\CollectionsPerformanceTest\archive\Corona_NLP_train.csv";
     static void Main(string[] args) {
-      TweetFilter app = new TweetFilter(_filePath);
-      var timer = new Stopwatch();
-      timer.Start();
-      app.RunSentimentFilterUsingIEnum("positive");
-      timer.Stop();
-      TimeSpan timeTaken = timer.Elapsed;
-      Console.WriteLine($"Processing Time: { timeTaken }");
+      LoopTest loop = new LoopTest();
+      loop.StartLoop(_filePath, 20);
+      loop.PrintAverage();
       Console.ReadKey();
     }
   }
