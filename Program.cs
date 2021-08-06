@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest {
   class Program {
-    static string _filePath = @"C:\Lab Formulatrix\CollectionsPerformanceTest\CollectionsPerformanceTest\archive\Corona_NLP_train.csv";
+    static string _filePath = @"C:\Lab Formulatrix\CollectionsPerformanceTest\CollectionsPerformanceTest\archive\out.csv";
     static void Main(string[] args) {
       LoopRepository loop = new LoopRepository(_filePath, 1000);
       loop.StartLoop();

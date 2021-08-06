@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using CollectionsPerformanceTest.Models;
+using System.Collections;
 
 namespace CollectionsPerformanceTest.Business {
   class TweetsIEnum : TweetsIterator {
@@ -13,6 +14,7 @@ namespace CollectionsPerformanceTest.Business {
     }
     internal override void DoLoop() {
       while (_tweets.MoveNext()) {
+        Tweet tweet = (Tweet)_tweets.Current;
         // Do Nothing
       }
     }

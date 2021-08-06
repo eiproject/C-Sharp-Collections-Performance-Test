@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Models {
   class Tweet {
-    public string UserName { get; set; }
-    public string ScreenName { get; set; }
-    public string Location { get; set; }
-    public string TweetAt { get; set; }
-    public string OriginalTweet { get; set; }
-    public string Sentiment { get; set; }
+    public string ID { get; set; }
+    public string lang { get; set; }
+    public string Date { get; set; }
+    public string Source { get; set; }
+    public string Len { get; set; }
+    public string FullText { get; set; }
+    public string Likes { get; set; }
+    public string RTs { get; set; }
+    public string Hashtags { get; set; }
+    public string UserMentionNames { get; set; }
+    public string UserMentionID { get; set; }
+    public string Name { get; set; }
+    public string Place { get; set; }
+    public string Followers { get; set; }
+    public string Friends { get; set; }
   }
 }

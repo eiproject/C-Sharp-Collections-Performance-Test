@@ -12,9 +12,7 @@ using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Business {
   class LoopRepository {
-    private StreamReader _csvStreamer;
-    protected CsvReader _csvReader;
-
+    CSVReader _reader;
     private ArrayList _iteratorObjects = new ArrayList();
     private List<TimeSpan> _times;
     private int _numberOfIteration;
@@ -23,11 +21,14 @@ namespace CollectionsPerformanceTest.Business {
     internal LoopRepository(string filePath, int numberOfIteration) {
       _numberOfIteration = numberOfIteration;
       _stopwatch = new Stopwatch();
-      ArrayList tweets = ReadFromCSV(filePath);
+      _reader = new CSVReader();
 
+      // ArrayList tweets = _reader.ReadUsingCSVReader(filePath);
+      ArrayList tweets = _reader.ReadUsingFileReadLines(filePath);
       _iteratorObjects.Add(new TweetsIEnum(tweets));
       _iteratorObjects.Add(new TweetsIList(tweets));
-      _iteratorObjects.Add(new TweetsIReadOnlyList(tweets));
+
+      /*_iteratorObjects.Add(new TweetsIReadOnlyList(tweets));
       _iteratorObjects.Add(new TweetsICollection(tweets));
 
       _iteratorObjects.Add(new TweetsArray(tweets));
@@ -47,7 +48,7 @@ namespace CollectionsPerformanceTest.Business {
       _iteratorObjects.Add(new TweetsOrderedDictionary(tweets));
       _iteratorObjects.Add(new TweetsSortedDictionary(tweets));
       _iteratorObjects.Add(new TweetsSortedList(tweets));
-      _iteratorObjects.Add(new TweetsSortedListWithKeyValue(tweets));
+      _iteratorObjects.Add(new TweetsSortedListWithKeyValue(tweets));*/
     }
 
     internal void StartLoop() {
@@ -78,16 +79,7 @@ namespace CollectionsPerformanceTest.Business {
       Console.WriteLine($"------------------------------------------");
     
     }
-    private ArrayList ReadFromCSV(string filePath) {
-      ArrayList tweets = new ArrayList();
-      _csvStreamer = File.OpenText(filePath);
-      _csvReader = new CsvReader(_csvStreamer, new CultureInfo("en-US", false));
-      while (_csvReader.Read()) {
-        Tweet tweet = _csvReader.GetRecord<Tweet>();
-        tweets.Add(tweet);
-      }
-      return tweets;
-    }
+
     private void CreateNewElapsedTimeGroup() {
       _times = new List<TimeSpan>();
     }

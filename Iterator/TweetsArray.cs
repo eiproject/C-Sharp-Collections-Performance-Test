@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using CollectionsPerformanceTest.Models;
+using System.Collections;
 namespace CollectionsPerformanceTest.Business {
   class TweetsArray : TweetsIterator {
     object[] _tweets;
@@ -12,6 +13,7 @@ namespace CollectionsPerformanceTest.Business {
     }
     internal override void DoLoop() {
       for (int i = 0; i < _tweets.Length; i++) {
+        Tweet tweet = (Tweet)_tweets[i];
         // Do Nothing
       }
     }
