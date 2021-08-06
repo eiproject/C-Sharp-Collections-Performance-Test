@@ -1,19 +1,21 @@
 ﻿using CollectionsPerformanceTest.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace CollectionsPerformanceTest.Business {
-  class TweetsHashSet : TweetsIterator {
-    HashSet<Tweet> _tweets;
-    internal TweetsHashSet(ArrayList tweets)
+  class TweetsList : TweetsIterator {
+    List<Tweet> _tweets;
+    internal TweetsList(ArrayList tweets)
       : base() {
-      _tweets = new HashSet<Tweet>();
+      Console.WriteLine(this.GetType().Name);
+      _tweets = new List<Tweet>();
       foreach (Tweet tweet in tweets) {
         _tweets.Add(tweet);
       }
     }
 
-    internal HashSet<Tweet> GetTweets() {
+    internal List<Tweet> GetTweets() {
       return _tweets;
     }
 

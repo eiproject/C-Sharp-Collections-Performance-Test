@@ -1,4 +1,5 @@
 ﻿using CollectionsPerformanceTest.Models;
+using System;
 using System.Collections;
 
 namespace CollectionsPerformanceTest.Business {
@@ -6,6 +7,7 @@ namespace CollectionsPerformanceTest.Business {
     ArrayList _tweets;
     internal TweetsArrayList(ArrayList tweets)
       : base() {
+      Console.WriteLine(this.GetType().Name);
       _tweets = tweets;
     }
 

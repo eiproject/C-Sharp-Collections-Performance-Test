@@ -1,4 +1,5 @@
 ﻿using CollectionsPerformanceTest.Models;
+using System;
 using System.Collections;
 
 namespace CollectionsPerformanceTest.Business {
@@ -6,6 +7,7 @@ namespace CollectionsPerformanceTest.Business {
     IEnumerator _tweets;    
     internal TweetsIEnum(ArrayList tweets) 
       : base () {
+      Console.WriteLine(this.GetType().Name);
       IEnumerable createEnumerableTweets = new TweetsEnumerable(tweets);
       _tweets = createEnumerableTweets.GetEnumerator();
     }

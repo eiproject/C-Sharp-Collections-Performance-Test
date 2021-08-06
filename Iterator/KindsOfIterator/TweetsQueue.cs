@@ -1,4 +1,5 @@
 ﻿using CollectionsPerformanceTest.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ namespace CollectionsPerformanceTest.Business {
     Stack<Tweet> _tweets;
     internal TweetsStack(ArrayList tweets)
       : base() {
+      Console.WriteLine(this.GetType().Name);
       _tweets = new Stack<Tweet>();
       foreach (Tweet tweet in tweets) {
         _tweets.Push(tweet);

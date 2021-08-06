@@ -1,10 +1,12 @@
 ﻿using CollectionsPerformanceTest.Models;
+using System;
 using System.Collections;
 namespace CollectionsPerformanceTest.Business {
   class TweetsArray : TweetsIterator {
     object[] _tweets;
     internal TweetsArray(ArrayList tweets)
       : base() {
+      Console.WriteLine(this.GetType().Name);
       _tweets = tweets.ToArray();
     }
 

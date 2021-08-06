@@ -1,20 +1,19 @@
 ﻿using CollectionsPerformanceTest.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace CollectionsPerformanceTest.Business {
-  class TweetsLinkedList : TweetsIterator {
-    LinkedList<Tweet> _tweets;
-    internal TweetsLinkedList(ArrayList tweets)
+  class TweetsIReadOnlyList : TweetsIterator {
+    IReadOnlyList<object> _tweets; 
+    internal TweetsIReadOnlyList(ArrayList tweets)
       : base() {
-      _tweets = new LinkedList<Tweet>();
-      foreach (Tweet tweet in tweets) {
-        _tweets.AddLast(tweet);
-      }
+      Console.WriteLine(this.GetType().Name);
+      _tweets = tweets.ToArray();
     }
 
-    internal LinkedList<Tweet> GetTweets() {
-      return _tweets;
+    internal List<object> GetTweets() {
+      return null;
     }
 
     internal override void DoLoop() {

@@ -11,24 +11,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CollectionsPerformanceTest.Business {
-  class LoopRepository {
-    CSVReader _reader;
+  class LoopManager {
+    CSVManager _reader;
     private ArrayList _iteratorObjects = new ArrayList();
     private List<TimeSpan> _times;
     private int _numberOfIteration;
     private Stopwatch _stopwatch;
 
-    internal LoopRepository(string filePath, int numberOfIteration) {
+    internal LoopManager(string filePath, int numberOfIteration) {
       _numberOfIteration = numberOfIteration;
       _stopwatch = new Stopwatch();
-      _reader = new CSVReader();
+      _reader = new CSVManager();
 
       // ArrayList tweets = _reader.ReadUsingCSVReader(filePath);
       ArrayList tweets = _reader.ReadUsingFileReadLines(filePath);
       _iteratorObjects.Add(new TweetsIEnum(tweets));
       _iteratorObjects.Add(new TweetsIList(tweets));
 
-      /*_iteratorObjects.Add(new TweetsIReadOnlyList(tweets));
+      _iteratorObjects.Add(new TweetsIReadOnlyList(tweets));
       _iteratorObjects.Add(new TweetsICollection(tweets));
 
       _iteratorObjects.Add(new TweetsArray(tweets));
@@ -36,7 +36,7 @@ namespace CollectionsPerformanceTest.Business {
       _iteratorObjects.Add(new TweetsList(tweets));
       _iteratorObjects.Add(new TweetsArrayList(tweets));
       _iteratorObjects.Add(new TweetsLinkedList(tweets));
-      
+
       _iteratorObjects.Add(new TweetsQueue(tweets));
       _iteratorObjects.Add(new TweetsStack(tweets));
 
@@ -44,11 +44,11 @@ namespace CollectionsPerformanceTest.Business {
 
       _iteratorObjects.Add(new TweetsIDictionary(tweets));
       _iteratorObjects.Add(new TweetsHashtable(tweets));
-      _iteratorObjects.Add(new TweetsListDictionary(tweets));
+      // _iteratorObjects.Add(new TweetsListDictionary(tweets));
       _iteratorObjects.Add(new TweetsOrderedDictionary(tweets));
       _iteratorObjects.Add(new TweetsSortedDictionary(tweets));
-      _iteratorObjects.Add(new TweetsSortedList(tweets));
-      _iteratorObjects.Add(new TweetsSortedListWithKeyValue(tweets));*/
+      // _iteratorObjects.Add(new TweetsSortedList(tweets));
+      // _iteratorObjects.Add(new TweetsSortedListWithKeyValue(tweets));
     }
 
     internal void StartLoop() {

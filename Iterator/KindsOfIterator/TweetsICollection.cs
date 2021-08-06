@@ -1,12 +1,14 @@
 ﻿using CollectionsPerformanceTest.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace CollectionsPerformanceTest.Business {
-  class TweetsIReadOnlyList : TweetsIterator {
-    IReadOnlyList<object> _tweets; 
-    internal TweetsIReadOnlyList(ArrayList tweets)
+  class TweetsICollection : TweetsIterator {
+    ICollection<object> _tweets; 
+    internal TweetsICollection(ArrayList tweets)
       : base() {
+      Console.WriteLine(this.GetType().Name);
       _tweets = tweets.ToArray();
     }
 
